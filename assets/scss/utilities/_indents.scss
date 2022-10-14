@@ -1,0 +1,674 @@
+// Adaptive
+// $breakpoints: (xs: 375, sm: 576, tb: 768, md: 1024, lg: 1280, xl: 1440, bg: 1920);
+$breakpoints-max: (
+  xs: 374,
+  sm: 575,
+  tb: 767,
+  md: 1023,
+  lg: 1279,
+  xl: 1439,
+  bg: 1919,
+);
+$breakpoints-min: (
+  xs: 375,
+  sm: 576,
+  tb: 768,
+  md: 1024,
+  lg: 1280,
+  xl: 1440,
+  bg: 1920,
+);
+
+@mixin max($size) {
+  @if map-has-key($breakpoints-max, $size) {
+    @media (max-width: #{map-get($breakpoints-max, $size)}px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: #{$size}px) {
+      @content;
+    }
+  }
+}
+
+@mixin min($size) {
+  @if map-has-key($breakpoints-min, $size) {
+    @media (min-width: #{map-get($breakpoints-min, $size)}px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: #{$size}px) {
+      @content;
+    }
+  }
+}
+
+// indents - if you have many of the same indents, you can extract them as mixin
+// mb - margin-bottom, mt - margin-top, pb - padding-bottom, pt - padding-top,
+@mixin mt-aquamarine {
+  margin-top: 80px;
+
+  @include min(tb) {
+    margin-top: 96px;
+  }
+  @include min(md) {
+    margin-top: 112px;
+  }
+  @include min(xl) {
+    margin-top: 132px;
+  }
+  @include min(bg) {
+    margin-top: 180px;
+  }
+}
+@mixin mb-aquamarine {
+  margin-bottom: 80px;
+
+  @include min(tb) {
+    margin-bottom: 96px;
+  }
+  @include min(md) {
+    margin-bottom: 112px;
+  }
+  @include min(xl) {
+    margin-bottom: 132px;
+  }
+  @include min(bg) {
+    margin-bottom: 180px;
+  }
+}
+
+@mixin mt-thistle {
+  margin-top: 80px;
+
+  @include min(tb) {
+    margin-top: 96px;
+  }
+  @include min(md) {
+    margin-top: 112px;
+  }
+  @include min(xl) {
+    margin-top: 120px;
+  }
+  @include min(bg) {
+    margin-top: 156px;
+  }
+}
+@mixin mb-thistle {
+  margin-bottom: 80px;
+
+  @include min(tb) {
+    margin-bottom: 96px;
+  }
+  @include min(md) {
+    margin-bottom: 112px;
+  }
+  @include min(xl) {
+    margin-bottom: 120px;
+  }
+  @include min(bg) {
+    margin-bottom: 156px;
+  }
+}
+
+@mixin mt-skyblue {
+  margin-top: 72px;
+
+  @include min(tb) {
+    margin-top: 80px;
+  }
+  @include min(md) {
+    margin-top: 88px;
+  }
+  @include min(xl) {
+    margin-top: 96px;
+  }
+  @include min(bg) {
+    margin-top: 132px;
+  }
+}
+@mixin mb-skyblue {
+  margin-bottom: 72px;
+
+  @include min(tb) {
+    margin-bottom: 80px;
+  }
+  @include min(md) {
+    margin-bottom: 88px;
+  }
+  @include min(xl) {
+    margin-bottom: 96px;
+  }
+  @include min(bg) {
+    margin-bottom: 132px;
+  }
+}
+
+@mixin mt-blueviolet {
+  margin-top: 56px;
+
+  @include min(tb) {
+    margin-top: 64px;
+  }
+  @include min(md) {
+    margin-top: 72px;
+  }
+  @include min(xl) {
+    margin-top: 80px;
+  }
+  @include min(bg) {
+    margin-top: 120px;
+  }
+}
+@mixin mb-blueviolet {
+  margin-bottom: 56px;
+
+  @include min(tb) {
+    margin-bottom: 64px;
+  }
+  @include min(md) {
+    margin-bottom: 72px;
+  }
+  @include min(xl) {
+    margin-bottom: 80px;
+  }
+  @include min(bg) {
+    margin-bottom: 120px;
+  }
+}
+
+@mixin mt-coral {
+  margin-top: 48px;
+
+  @include min(tb) {
+    margin-top: 56px;
+  }
+  @include min(xl) {
+    margin-top: 64px;
+  }
+  @include min(bg) {
+    margin-top: 80px;
+  }
+}
+@mixin mb-coral {
+  margin-bottom: 48px;
+
+  @include min(tb) {
+    margin-bottom: 56px;
+  }
+  @include min(xl) {
+    margin-bottom: 64px;
+  }
+  @include min(bg) {
+    margin-bottom: 80px;
+  }
+}
+
+@mixin mt-antiquewhite {
+  margin-top: 40px;
+
+  @include min(tb) {
+    margin-top: 48px;
+  }
+  @include min(md) {
+    margin-top: 56px;
+  }
+  @include min(bg) {
+    margin-top: 80px;
+  }
+}
+@mixin mb-antiquewhite {
+  margin-bottom: 40px;
+
+  @include min(tb) {
+    margin-bottom: 48px;
+  }
+  @include min(md) {
+    margin-bottom: 56px;
+  }
+  @include min(bg) {
+    margin-bottom: 80px;
+  }
+}
+
+@mixin mt-cornflowerblue {
+  margin-top: 32px;
+
+  @include min(xl) {
+    margin-top: 40px;
+  }
+  @include min(bg) {
+    margin-top: 48px;
+  }
+}
+@mixin mb-cornflowerblue {
+  margin-bottom: 32px;
+
+  @include min(xl) {
+    margin-bottom: 40px;
+  }
+  @include min(bg) {
+    margin-bottom: 48px;
+  }
+}
+
+@mixin mt-crimson {
+  margin-top: 20px;
+
+  @include min(tb) {
+    margin-top: 24px;
+  }
+  @include min(xl) {
+    margin-top: 32px;
+  }
+  @include min(bg) {
+    margin-top: 40px;
+  }
+}
+@mixin mb-crimson {
+  margin-bottom: 20px;
+
+  @include min(tb) {
+    margin-bottom: 24px;
+  }
+  @include min(xl) {
+    margin-bottom: 32px;
+  }
+  @include min(bg) {
+    margin-bottom: 40px;
+  }
+}
+
+@mixin mt-darkgreen {
+  margin-top: 20px;
+
+  @include min(xl) {
+    margin-top: 24px;
+  }
+  @include min(bg) {
+    margin-top: 32px;
+  }
+}
+@mixin mb-darkgreen {
+  margin-bottom: 20px;
+
+  @include min(xl) {
+    margin-bottom: 24px;
+  }
+  @include min(bg) {
+    margin-bottom: 32px;
+  }
+}
+
+@mixin mt-gold {
+  margin-top: 12px;
+
+  @include min(md) {
+    margin-top: 16px;
+  }
+  @include min(bg) {
+    margin-top: 24px;
+  }
+}
+@mixin mb-gold {
+  margin-bottom: 12px;
+
+  @include min(md) {
+    margin-bottom: 16px;
+  }
+  @include min(bg) {
+    margin-bottom: 24px;
+  }
+}
+
+@mixin mt-greenyellow {
+  margin-top: 8px;
+
+  @include min(xl) {
+    margin-top: 12px;
+  }
+  @include min(bg) {
+    margin-top: 16px;
+  }
+}
+@mixin mb-greenyellow {
+  margin-bottom: 8px;
+
+  @include min(xl) {
+    margin-bottom: 12px;
+  }
+  @include min(bg) {
+    margin-bottom: 16px;
+  }
+}
+
+@mixin mt-olive {
+  margin-top: 8px;
+
+  @include min(bg) {
+    margin-top: 12px;
+  }
+}
+@mixin mb-olive {
+  margin-bottom: 8px;
+
+  @include min(bg) {
+    margin-bottom: 12px;
+  }
+}
+
+@mixin pt-aquamarine {
+  padding-top: 80px;
+
+  @include min(tb) {
+    padding-top: 96px;
+  }
+  @include min(md) {
+    padding-top: 112px;
+  }
+  @include min(xl) {
+    padding-top: 132px;
+  }
+  @include min(bg) {
+    padding-top: 180px;
+  }
+}
+@mixin pb-aquamarine {
+  padding-bottom: 80px;
+
+  @include min(tb) {
+    padding-bottom: 96px;
+  }
+  @include min(md) {
+    padding-bottom: 112px;
+  }
+  @include min(xl) {
+    padding-bottom: 132px;
+  }
+  @include min(bg) {
+    padding-bottom: 180px;
+  }
+}
+
+@mixin pt-thistle {
+  padding-top: 80px;
+
+  @include min(tb) {
+    padding-top: 96px;
+  }
+  @include min(md) {
+    padding-top: 112px;
+  }
+  @include min(xl) {
+    padding-top: 120px;
+  }
+  @include min(bg) {
+    padding-top: 156px;
+  }
+}
+@mixin pb-thistle {
+  padding-bottom: 80px;
+
+  @include min(tb) {
+    padding-bottom: 96px;
+  }
+  @include min(md) {
+    padding-bottom: 112px;
+  }
+  @include min(xl) {
+    padding-bottom: 120px;
+  }
+  @include min(bg) {
+    padding-bottom: 156px;
+  }
+}
+
+@mixin pt-skyblue {
+  padding-top: 72px;
+
+  @include min(tb) {
+    padding-top: 80px;
+  }
+  @include min(md) {
+    padding-top: 88px;
+  }
+  @include min(xl) {
+    padding-top: 96px;
+  }
+  @include min(bg) {
+    padding-top: 132px;
+  }
+}
+@mixin pb-skyblue {
+  padding-bottom: 72px;
+
+  @include min(tb) {
+    padding-bottom: 80px;
+  }
+  @include min(md) {
+    padding-bottom: 88px;
+  }
+  @include min(xl) {
+    padding-bottom: 96px;
+  }
+  @include min(bg) {
+    padding-bottom: 132px;
+  }
+}
+
+@mixin pt-blueviolet {
+  padding-top: 56px;
+
+  @include min(tb) {
+    padding-top: 64px;
+  }
+  @include min(md) {
+    padding-top: 72px;
+  }
+  @include min(xl) {
+    padding-top: 80px;
+  }
+  @include min(bg) {
+    padding-top: 120px;
+  }
+}
+@mixin pb-blueviolet {
+  padding-bottom: 56px;
+
+  @include min(tb) {
+    padding-bottom: 64px;
+  }
+  @include min(md) {
+    padding-bottom: 72px;
+  }
+  @include min(xl) {
+    padding-bottom: 80px;
+  }
+  @include min(bg) {
+    padding-bottom: 120px;
+  }
+}
+
+@mixin pt-coral {
+  padding-top: 48px;
+
+  @include min(tb) {
+    padding-top: 56px;
+  }
+  @include min(xl) {
+    padding-top: 64px;
+  }
+  @include min(bg) {
+    padding-top: 80px;
+  }
+}
+@mixin pb-coral {
+  padding-bottom: 48px;
+
+  @include min(tb) {
+    padding-bottom: 56px;
+  }
+  @include min(xl) {
+    padding-bottom: 64px;
+  }
+  @include min(bg) {
+    padding-bottom: 80px;
+  }
+}
+
+@mixin pt-antiquewhite {
+  padding-top: 40px;
+
+  @include min(tb) {
+    padding-top: 48px;
+  }
+  @include min(md) {
+    padding-top: 56px;
+  }
+  @include min(bg) {
+    padding-top: 80px;
+  }
+}
+@mixin pb-antiquewhite {
+  padding-bottom: 40px;
+
+  @include min(tb) {
+    padding-bottom: 48px;
+  }
+  @include min(md) {
+    padding-bottom: 56px;
+  }
+  @include min(bg) {
+    padding-bottom: 80px;
+  }
+}
+
+@mixin pt-cornflowerblue {
+  padding-top: 32px;
+
+  @include min(xl) {
+    padding-top: 40px;
+  }
+  @include min(bg) {
+    padding-top: 48px;
+  }
+}
+@mixin pb-cornflowerblue {
+  padding-bottom: 32px;
+
+  @include min(xl) {
+    padding-bottom: 40px;
+  }
+  @include min(bg) {
+    padding-bottom: 48px;
+  }
+}
+
+@mixin pt-crimson {
+  padding-top: 20px;
+
+  @include min(tb) {
+    padding-top: 24px;
+  }
+  @include min(xl) {
+    padding-top: 32px;
+  }
+  @include min(bg) {
+    padding-top: 40px;
+  }
+}
+@mixin pb-crimson {
+  padding-bottom: 20px;
+
+  @include min(tb) {
+    padding-bottom: 24px;
+  }
+  @include min(xl) {
+    padding-bottom: 32px;
+  }
+  @include min(bg) {
+    padding-bottom: 40px;
+  }
+}
+
+@mixin pt-darkgreen {
+  padding-top: 20px;
+
+  @include min(xl) {
+    padding-top: 24px;
+  }
+  @include min(bg) {
+    padding-top: 32px;
+  }
+}
+@mixin pb-darkgreen {
+  padding-bottom: 20px;
+
+  @include min(xl) {
+    padding-bottom: 24px;
+  }
+  @include min(bg) {
+    padding-bottom: 32px;
+  }
+}
+
+@mixin pt-gold {
+  padding-top: 12px;
+
+  @include min(md) {
+    padding-top: 16px;
+  }
+  @include min(bg) {
+    padding-top: 24px;
+  }
+}
+@mixin pb-gold {
+  padding-bottom: 12px;
+
+  @include min(md) {
+    padding-bottom: 16px;
+  }
+  @include min(bg) {
+    padding-bottom: 24px;
+  }
+}
+
+@mixin pt-greenyellow {
+  padding-top: 8px;
+
+  @include min(xl) {
+    padding-top: 12px;
+  }
+  @include min(bg) {
+    padding-top: 16px;
+  }
+}
+@mixin pb-greenyellow {
+  padding-bottom: 8px;
+
+  @include min(xl) {
+    padding-bottom: 12px;
+  }
+  @include min(bg) {
+    padding-bottom: 16px;
+  }
+}
+
+@mixin pt-olive {
+  padding-top: 8px;
+
+  @include min(bg) {
+    padding-top: 12px;
+  }
+}
+@mixin pb-olive {
+  padding-bottom: 8px;
+
+  @include min(bg) {
+    padding-bottom: 12px;
+  }
+}

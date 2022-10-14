@@ -1,0 +1,116 @@
+.cursor-circle {
+  width: 95px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 1s, opacity 0.7s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+
+  
+
+  svg {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  .cursor-pointer{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:2rem;
+    height:2rem;
+    transform:translate(-20%,-20%);
+  }
+  .cursor-circle__wrapper{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    mix-blend-mode: difference;
+    width:100%;
+    height:100%;
+    position: relative;
+    mix-blend-mode: difference;
+  }
+
+  circle {
+    stroke-dashoffset: -401.4742736816406;
+    stroke-dasharray: 401.4742736816406;
+    transition: 0.7s linear;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear, opacity 0.5s linear;
+
+    circle {
+      stroke-dasharray: 401.4742736816406;
+      stroke-dashoffset: 0;
+      transition: 0.7s linear;
+    }
+  }
+}
+.cursor-arrow {
+  width: 13px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear, opacity 0s linear, transform 0.2s linear;
+  position: absolute;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 6px);
+  z-index: 98;
+
+  svg {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-left {
+    transform: translate(-18px);
+  }
+
+  &-right {
+    transform: translate(18px);
+  }
+  
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear, opacity 0s linear, transform 0.2s linear;
+  }
+
+  &-left.down {
+    transform: translateX(-32px);
+  }
+
+  &-right.down {
+    transform: translateX(32px);
+  }
+
+  &-left.up {
+    transform: translateX(-18px);
+  }
+
+  &-right.up {
+    transform: translateX(18px);
+  }
+}

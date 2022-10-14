@@ -1,0 +1,19 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: local(""), 
+      url('#{$file-path}.otf') format("otf"),
+      url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.woff2') format('woff2'),
+      url('#{$file-path}.ttf') format('ttf');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@include font-face("SuisseIntl-Light", "../fonts/SuisseIntl/SuisseIntl-Light", 300);
+@include font-face("SuisseIntl-Regular", "../fonts/SuisseIntl/SuisseIntl-Regular", 400);
+@include font-face("SuisseIntl-SemiBold", "../fonts/SuisseIntl/SuisseIntl-SemiBold", 600);
+@include font-face("Metal-Trial-Reg-1", "../fonts/MetalTrial/Metal-Trial-Reg-1");
+@include font-face("Metal-Trial-Reg-3", "../fonts/MetalTrial/Metal-Trial-Reg-3");

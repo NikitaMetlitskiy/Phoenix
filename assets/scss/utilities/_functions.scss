@@ -1,0 +1,30 @@
+//  Example of using vw. For example, if you have a width: 40px, you can use - width: vw (40px), 
+//  but be sure to change $layout-width variable to be same as in your design.
+//  Use it only for a screen > 1200 pixels if needed (Optional):
+
+// < px to vw
+$layout-width: 1440;
+
+@function vw($px) {
+    $vw-context: ($layout-width * 0.01) * 1px;
+    @return calc($px/$vw-context) * 1vw;
+}
+
+// < px to rem
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;
+}
+// Example: you need to subtract px from the percentage, and get the result in vw
+// Usage - percent-m-vw(100%, 20px)
+
+// percent minus vw
+@function percent-m-vw($percent, $px) {
+    $vw-context: ($layout-width * 0.01) * 1px;
+    @return unquote(("calc(" + $percent + " + " + ($px / $vw-context) * 1vw + ")"));
+}
+
+//percent plus vw
+@function percent-p-vw($percent, $px) {
+    $vw-context: ($layout-width * 0.01) * 1px;
+    @return unquote(("calc(" + $percent + " + " + ($px / $vw-context) * 1vw + ")"));
+}

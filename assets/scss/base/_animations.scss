@@ -1,0 +1,53 @@
+//https://ru.vuejs.org/v2/guide/transitions.html
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
+.page-enter-active{
+  transition: opacity .5s ease-in, transform .5s ease-in;
+}
+.page-leave-active {
+  transition: opacity .5s ease-in, transform .5s ease-in;
+}
+.page-enter{
+  opacity: 0;
+}
+.page-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  // opacity: 0;
+  transform: translateY(40px) scale3d(0.95, 1, 1);
+
+  // &.page-leave-to::after {
+  //   animation: mask .35s linear;
+  // }
+}
+// .page-enter-to,
+// .page-leave-to {
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: fixed;
+//     z-index: 100000;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 150vh;
+//     background-color: #f8f8f8;
+//   }
+// }
+
+@keyframes mask {
+  from {
+    transform: translateY(110%);
+  }
+  99% {
+    transform: translateY(0%);
+  }
+  to {
+    z-index: -1;
+  }
+}

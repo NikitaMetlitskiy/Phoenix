@@ -1,0 +1,146 @@
+// This is a file for text classes. If you have a general class for the h1 header - you can write it here.
+// Does not use tags to write styles. It is best if you use classes such as .h1 for the main header
+
+.h1 {
+  font-family: "Metal-Trial-Reg-3", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @include min(tb) {
+    font-size: 72px;
+  }
+  @include min(md) {
+    font-size: 88px;
+  }
+  @include min(xl) {
+    font-size: 120px;
+  }
+  @include min(bg) {
+    font-size: 160px;
+  }
+}
+.h2 {
+  font-family: "Metal-Trial-Reg-3", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @include min(tb) {
+    font-size: 40px;
+  }
+  @include min(md) {
+    font-size: 48px;
+  }
+  @include min(xl) {
+    font-size: 64px;
+  }
+  @include min(bg) {
+    font-size: 80px;
+  }
+}
+.h3 {
+  font-family: "Metal-Trial-Reg-3", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @include min(tb) {
+    font-size: 32px;
+  }
+  @include min(xl) {
+    font-size: 40px;
+  }
+  @include min(bg) {
+    font-size: 48px;
+  }
+}
+.h4 {
+  font-family: "Metal-Trial-Reg-3", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  @include min(tb) {
+    font-size: 24px;
+  }
+  @include min(bg) {
+    font-size: 32px;
+  }
+}
+.p1 {
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  @include min(bg) {
+    font-size: 16px;
+  }
+}
+.p1-light {
+  font-family: "SuisseIntl-Light", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  @include min(bg) {
+    font-size: 16px;
+  }
+}
+.p2 {
+  font-family: "Metal-Trial-Reg-3", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.9;
+  text-transform: uppercase;
+
+  @include min(tb) {
+    font-size: 16px;
+  }
+  @include min(bg) {
+    font-size: 20px;
+  }
+}
+.p3 {
+  font-family: "SuisseIntl-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include min(tb) {
+    font-size: 16px;
+  }
+  @include min(bg) {
+    font-size: 20px;
+  }
+}
+.a1 {
+  font-family: "SuisseIntl-SemiBold", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  @include min(bg) {
+    font-size: 16px;
+  }
+}
