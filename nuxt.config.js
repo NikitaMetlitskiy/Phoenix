@@ -172,5 +172,7 @@ export default {
 //   },
   server:{  
     port: 3044 //default 3000 
-  }
+  },
+  target:"static"
+  
 }
